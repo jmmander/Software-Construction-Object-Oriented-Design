@@ -73,7 +73,7 @@ public class PlaybackTwitterSource extends TwitterSource {
      */
     protected void sync() {
         System.out.println("Starting playback thread with " + terms);
-
+        threadStarted = false;
         startThread();
     }
 }

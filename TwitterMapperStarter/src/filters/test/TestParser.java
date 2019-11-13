@@ -45,9 +45,9 @@ public class TestParser {
     @Test
     public void testOrAndNot() throws SyntaxError {
         Filter e = new Parser("elephants and not dogs or not cats and mice").parse();
-        assertTrue(e.toString().equals("((elephants and not dogs) or (not cats and mice))"));
-        Filter o = new Parser("(elephants and dogs) or yellow and purple").parse();
-        assertEquals("((elephants and dogs) or (yellow and purple))", o.toString());
+        assertEquals(e.toString(), "((elephants and not dogs) or (not cats and mice))");
+        Filter o = new Parser("(elephants and dogs) or cats and mice").parse();
+        assertEquals("((elephants and dogs) or (cats and mice))", o.toString());
     }
 }
 

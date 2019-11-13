@@ -37,7 +37,7 @@ public class TestFilters {
         assertFalse(f.matches(makeStatus("fred Skelton")));
         assertFalse(f.matches(makeStatus("Red Llintstone")));
         assertFalse(f.matches(makeStatus("red llintstone")));
-        assertEquals("(Fred and flintstone)", f.toString());
+        assertEquals(f.toString(),"(Fred and flintstone)");
 
     }
 
@@ -50,7 +50,7 @@ public class TestFilters {
         assertTrue(f.matches(makeStatus("red Skelton")));
         assertFalse(f.matches(makeStatus("pink Skelton")));
         assertFalse(f.matches(makeStatus("Pink Skelton")));
-        assertEquals("(fred or Red)", f.toString());
+        assertEquals(f.toString(), "(fred or Red)" );
     }
 
     private Status makeStatus(String text) {

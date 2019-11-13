@@ -123,7 +123,6 @@ public class Application extends JFrame {
             public void mouseMoved(MouseEvent e) {
                 Point p = e.getPoint();
                 ICoordinate pos = map().getPosition(p);
-                // TODO: Use the following method to set the text that appears at the mouse cursor
                 List<MapMarker> markers = getMarkersCovering(pos, pixelWidth(p));
                 for (MapMarker marker : markers) {
                     if (marker instanceof MapMarkerColor) {
@@ -202,7 +201,6 @@ public class Application extends JFrame {
 
     // A query has been deleted, remove all traces of it
     public void terminateQuery(Query query) {
-        // TODO: This is the place where you should disconnect the expiring query from the twitter source
         queries.remove(query);
         twitterSource.deleteObserver(query);
         Set<String> allterms = getQueryTerms();
